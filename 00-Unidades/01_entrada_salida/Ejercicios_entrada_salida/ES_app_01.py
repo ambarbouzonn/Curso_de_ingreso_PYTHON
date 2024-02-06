@@ -5,14 +5,17 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Ambar Morena
+apellido: Bouzon
 ---
 Ejercicio: entrada_salida_01
 ---
 Enunciado:
 Al presionar el  botón, se debe mostrar un mensaje como el siguiente "Esto no anda, funciona".
 '''
+
+titulo = "Ejercicio"
+mensaje = "Esto no anda, funciona"
 
 class App(customtkinter.CTk):
 
@@ -26,7 +29,8 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+       alert(titulo, mensaje)
+
 
 
 if __name__ == "__main__":
