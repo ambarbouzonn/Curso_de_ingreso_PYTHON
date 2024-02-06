@@ -11,8 +11,9 @@ apellido:
 Ejercicio: entrada_salida_08
 ---
 Enunciado:
-Al presionar el botón  'Calcular', se deberán obtener los valores contenidos en las cajas de texto (txtOperadorA y txtOperadorB), 
-transformarlos en números enteros, calcular y mostrar el resto de la división entre ambos números, utilizando el Dialog Alert. 
+Al presionar el botón  'Calcular', se deberán obtener los valores contenidos en las cajas de texto 
+(txtOperadorA y txtOperadorB), transformarlos en números enteros, calcular y mostrar el 
+resto de la división entre ambos números, utilizando el Dialog Alert. 
 Ej: "El resto de dividir 7 por 2 es: 1" 
 '''
 
@@ -35,12 +36,15 @@ class App(customtkinter.CTk):
         self.txt_operador_b = customtkinter.CTkEntry(master=self)
         self.txt_operador_b.grid(row=1, column=1)
         
-        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
+        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Calcular", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
 
     def btn_mostrar_on_click(self):
-        pass
+        dividiendo = int(self.txt_operador_a.get())
+        divisor = int(self.txt_operador_b.get())
+        resto = dividiendo % divisor
+        alert("Resultado", "El resto de dividir {} por {} es: {}".format(dividiendo, divisor, resto))
         
         
     
