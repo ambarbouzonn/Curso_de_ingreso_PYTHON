@@ -17,6 +17,7 @@ transformarlos en números enteros, realizar dicha operación y luego mostrar el
 de la misma utilizando el Dialog Alert. Ej: "El resultado de la …… es: 755"  
 '''
 
+
 class App(customtkinter.CTk):
     
     def __init__(self):
@@ -49,16 +50,28 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        pass
+        numero1 = int(self.txt_operador_a.get())
+        numero2 = int(self.txt_operador_b.get())
+        suma = numero1 + numero2
+        alert("Resultado", "El resultado de la suma es: " + str(suma))
 
     def btn_restar_on_click(self):
-        pass
+        numero1 = int(self.txt_operador_a.get())
+        numero2 = int(self.txt_operador_b.get())
+        resta = numero1 - numero2
+        alert("Resultado", "El resultado de la resta es: " + str(resta))
 
     def btn_multiplicar_on_click(self):
-        pass
+        numero1 = int(self.txt_operador_a.get())
+        numero2 = int(self.txt_operador_b.get())
+        multiplicar = numero1 * numero2
+        alert("Resultado", "El resultado de la multiplicacion es: " + str(multiplicar))
 
     def btn_dividir_on_click(self):
-        pass
+        numero1 = int(self.txt_operador_a.get())
+        numero2 = int(self.txt_operador_b.get())
+        dividir = numero1 / numero2
+        alert("Resultado", "El resultado de la division es: " + str(dividir))
         
 if __name__ == "__main__":
     app = App()
