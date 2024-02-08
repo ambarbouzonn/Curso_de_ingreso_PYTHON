@@ -44,7 +44,7 @@ class App(customtkinter.CTk):
         dividiendo = int(self.txt_operador_a.get())
         divisor = int(self.txt_operador_b.get())
         resto = dividiendo % divisor
-        alert("Resultado", "El resto de dividir {} por {} es: {}".format(dividiendo, divisor, resto))
+        alert("Resultado", "El resto de la division de {} por {} es: {}".format(dividiendo, divisor, resto))
         
         
     

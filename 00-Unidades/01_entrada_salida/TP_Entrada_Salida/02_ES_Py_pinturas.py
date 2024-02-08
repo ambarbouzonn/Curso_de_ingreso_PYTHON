@@ -48,15 +48,17 @@ class App(customtkinter.CTk):
         self.btn_convertir_f_c.grid(row=4, pady=10, columnspan=2, sticky="nsew")
     
     def btn_convertir_c_f_on_click(self):
-        temp_centigrados = int(self.txt_temperatura_c.get())
+        temp_centigrados = float(self.txt_temperatura_c.get())
         calculo = (temp_centigrados * 9/5) + 32
-        alert("Resultado", str(temp_centigrados) + ("°C es igual a ") + str(calculo) + ("°F"))
+        mensaje = "{0}°C es igual a {1}°F".format(temp_centigrados,calculo)
+        alert("Resultado",mensaje)
 
 
     def btn_convertir_f_c_on_click(self):
-        temp_fare = int(self.txt_temperatura_f.get())
+        temp_fare = float(self.txt_temperatura_f.get())
         calculo = (temp_fare - 32) * 5/9
-        alert("Resultado", str(temp_fare) + ("°F es igual a ") + str(calculo) + ("°C"))
+        mensaje = "{0}°F es igual a {1}°C".format(temp_fare,calculo)
+        alert("Resultado",mensaje)
     
     
 if __name__ == "__main__":
