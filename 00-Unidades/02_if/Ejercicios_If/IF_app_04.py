@@ -12,7 +12,8 @@ Ejercicio: if_04
 ---
 Enunciado:
 Al presionar el botón 'Calcular', se deberá obtener el contenido de la caja de texto txtEdad, 
-transformarlo en número y calcular si es adolescente (edad entre 13 y 17 años). Se deberá informar utilizando el Dialog alert.
+transformarlo en número y calcular si es adolescente (edad entre 13 y 17 años). Se deberá informar 
+utilizando el Dialog alert.
 '''
 
 
