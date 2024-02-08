@@ -44,7 +44,9 @@ class App(customtkinter.CTk):
         numero1 = int(self.txt_operador_a.get())
         numero2 = int(self.txt_operador_b.get())
         total = numero1 + numero2
-        alert("Resultado", "El resultado de la suma es: " + str(total))
+
+        mensaje = "El resultado de la suma es: {0}".format(total)
+        alert("Resultado",mensaje)
      
         
 if __name__ == "__main__":

@@ -36,7 +36,9 @@ class App(customtkinter.CTk):
         sueldo = int(self.txt_sueldo.get())
         incremento = sueldo * 0.15
         total = sueldo + incremento
-        alert("Resultado", "Su sueldo con el incremento es de: " + str(total))
+
+        mensaje = "Su sueldo con el incremento es de: {0}".format(total)
+        alert("Resultado",mensaje)
 
         
     

@@ -43,7 +43,9 @@ class App(customtkinter.CTk):
         incremento = float(self.txt_incremento.get())
         total_incremento = sueldo * incremento
         total_final = sueldo + total_incremento
-        alert("Resultado", "Su sueldo con el incremento del " + str(incremento) + " es igual a: " + str(total_final))
+
+        mensaje = "Su sueldo con el incremento del {0} es igual a: {1}".format(incremento,total_final)
+        alert("Resultado",mensaje)
         
     
 if __name__ == "__main__":
