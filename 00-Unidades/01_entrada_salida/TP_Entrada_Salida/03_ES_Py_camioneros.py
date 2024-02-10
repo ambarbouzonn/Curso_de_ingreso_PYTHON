@@ -56,12 +56,12 @@ class App(customtkinter.CTk):
     def btn_cantidad_camiones_on_click(self):
         catidad_toneladas = int(self.txt_toneladas.get())
         cantidad_camiones = catidad_toneladas / 3500
-        alert("Resultado", "La cantidad de camniones que necesita es: " + str(cantidad_camiones))
+        alert("Resultado", "La cantidad de camniones que necesita es: {0}").format(cantidad_camiones)
 
     def btn_tiempo_llegada_on_click(self):
         cantidad_kilometros = int(self.txt_kilometros.get())
         tiempo_llegada = cantidad_kilometros / 90
-        alert("Resultado", "El tiempo que le tomara al camion para llegar es de: " + str(tiempo_llegada))
+        alert("Resultado", "El tiempo que le tomara al camion para llegar es de: {0}").format(tiempo_llegada)
     
     
 if __name__ == "__main__":
