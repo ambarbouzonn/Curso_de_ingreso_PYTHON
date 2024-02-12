@@ -43,56 +43,36 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        titulo_alert = "Iluminacion"
-        precio_lampara = 800
         marca = self.combobox_marca.get()
         cantidad = int(self.combobox_cantidad.get())
 
-        # compra 6 o más  lamparitas bajo consumo 
-        compra_mayor_a_6_multi = precio_lampara * cantidad
-        compra_mayor_a_6_menos = compra_mayor_a_6_multi * 0.50
-        compra_mayor_a_6_total = compra_mayor_a_6_multi - compra_mayor_a_6_menos
-        mensaje_6 = "Usted realizo una compra de {0} lamparas bajo consumo por lo que su total de compra queda en: {1}".format(cantidad, compra_mayor_a_6_total)
+        precio_unitario = 800
+        precio_final = precio_unitario * cantidad
 
-        # compra 5  lamparitas bajo consumo marca "ArgentinaLuz"
-        compra_mayor_a_5_multi_argentinaluz = precio_lampara * 5
-        compra_mayor_a_5_menos_argentinaluz = compra_mayor_a_5_multi_argentinaluz * 0.40
-        compra_mayor_a_5_total_argentinaluz = compra_mayor_a_5_multi_argentinaluz - compra_mayor_a_5_menos_argentinaluz
-        mensaje_5_argentinaluz = "Usted realizo una compra de 5 lamparas bajo consumo con la marca ArgentinaLuz por lo que su total de compra queda en: {0}".format(compra_mayor_a_5_total_argentinaluz)
-
-        # compra 5  lamparitas bajo consumo marca culaquiera
-        compra_mayor_a_5_multi_multimarca = precio_lampara * 5
-        compra_mayor_a_5_menos_multimarca = compra_mayor_a_5_multi_multimarca * 0.30
-        compra_mayor_a_5_total_multimarca = compra_mayor_a_5_multi_multimarca - compra_mayor_a_5_menos_multimarca
-        mensaje_5 = "Usted realizo una compra de 5 lamparas bajo consumo por lo que su total de compra queda en: {0}".format(compra_mayor_a_5_total_multimarca)
-
-        # compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas”
-        compra_mayor_a_4_multi = precio_lampara * 4
-        compra_mayor_a_4_menos = compra_mayor_a_4_multi * 0.25
-        compra_mayor_a_4_total = compra_mayor_a_4_multi - compra_mayor_a_4_menos
-        mensaje_4 = "Usted realizo una compra de 4 lamparas bajo consumo de {0} por lo que su total de compra queda en: {1}".format(marca,compra_mayor_a_4_total)
-
-        # compra 4  lamparitas bajo consumo marca "JeLuz", "HazIluminacion" y "Osram"
-        compra_mayor_4_multi_marca = precio_lampara * 4
-        compra_mayor_a_4_menos_marca = compra_mayor_4_multi_marca * 0.20
-        compra_mayor_a_4_total_marca = compra_mayor_4_multi_marca - compra_mayor_a_4_menos_marca
-        mensaje_4_marca = "Usted realizo una compra de 4 lamparas bajo consumo de {0} por lo que su total de compra queda en: {1}".format(marca,compra_mayor_a_4_total_marca)
+        if cantidad >= 6:
+            precio_final *= 0.5
+        elif cantidad == 5:
+            if marca == "ArgentinaLuz":
+                precio_final *= 0.6
+            else:
+                precio_final *= 0.7
+        elif cantidad == 4:
+            if marca == "ArgentinaLuz" and "FelipeLamparas":
+                precio_final *= 0.75
+            else:
+                precio_final *= 0.8
+        elif cantidad == 3:
+            if marca == "ArgentinaLuz":
+                precio_final *= 0.85
+            elif marca == "FelipeLamparas":
+                precio_final *= 0.9
+            else:
+                precio_final *= 0.95
         
+        if precio_final > 4000:
+            precio_final *= 0.95
 
-        if (marca == "ArgentinaLuz" or "FelipeLamparas" or "JeLuz" or "HazIluminacion" or "Osram" and cantidad == 6):
-            alert(titulo_alert,mensaje_6)
-        elif (marca == "ArgentinaLuz" and cantidad == 5):
-            alert(titulo_alert, mensaje_5_argentinaluz)
-        elif (marca == "FelipeLamparas" or "JeLuz" or"HazIluminacion" or "Osram" and cantidad == 5):
-            alert(titulo_alert, mensaje_5)
-        elif (marca == "ArgentinaLuz" or "FelipeLamparas" and cantidad == 4):
-            alert(titulo_alert, mensaje_4)
-        elif (marca == "JeLuz" or "HazIluminacion" or "Osram" and cantidad == 4):
-            alert(titulo_alert, mensaje_4_marca)
-        
-        
-
-
+        alert("Total del compra", f"El precio final es: ${precio_final:.2f}")
         
     
 if __name__ == "__main__":
