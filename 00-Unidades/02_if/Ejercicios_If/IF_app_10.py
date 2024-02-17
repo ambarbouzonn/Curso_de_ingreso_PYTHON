@@ -41,10 +41,11 @@ class App(customtkinter.CTk):
 
         if 6 <= numero_aleatorio <= 10:
             alert(titulo_alert, mensaje_promocion)
-        elif 4 <= numero_aleatorio <= 5:
-            alert(titulo_alert, mensaje_aprobado)
-        elif 1 <= numero_aleatorio <= 3:
-            alert(titulo_alert, mensaje_desaprobado)
+        else:
+            if 4 <= numero_aleatorio <= 5:
+                alert(titulo_alert, mensaje_aprobado)
+            else:
+                alert(titulo_alert, mensaje_desaprobado)
 
 if __name__ == "__main__":
     app = App()

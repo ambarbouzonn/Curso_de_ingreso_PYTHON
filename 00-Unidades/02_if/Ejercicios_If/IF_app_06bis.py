@@ -43,12 +43,14 @@ class App(customtkinter.CTk):
         altura = int(self.txt_altura.get())
         if altura < 160:
             alert("Resultado", "Usted pertenece a la posicion: Base")
-        elif 160 <= altura <= 179:
-            alert("Resultado", "Usted pertenece a la posicion: Escolta")
-        elif 180 <= altura <= 199:
-            alert("Resultado", "Usted pertenece a la posicion: Alero")
-        elif altura >= 200:
-            alert("Resultado", "Usted pertenece a la posicion: Pivot")
+        else:
+            if 160 <= altura <= 179:
+                alert("Resultado", "Usted pertenece a la posicion: Escolta")
+            else:
+                if 180 <= altura <= 199:
+                    alert("Resultado", "Usted pertenece a la posicion: Alero")
+                else:
+                    alert("Resultado", "Usted pertenece a la posicion: Pivot")
 
         
         

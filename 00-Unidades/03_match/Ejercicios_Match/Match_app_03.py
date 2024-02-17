@@ -39,7 +39,7 @@ class App(customtkinter.CTk):
     
     def btn_informar_on_click(self):
         mes_seleccionado = self.combobox_mes.get()
-        titulo_alert = "Meses conteo"
+        titulo_alert = "Meses"
 
         match mes_seleccionado:
             case "Febrero":
