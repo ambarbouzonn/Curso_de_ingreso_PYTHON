@@ -43,7 +43,60 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+        titulo_alert = "Lamparas!"
+        precio_base = 800
+        precio = precio_base * cantidad
+
+        match (marca, cantidad):
+            case ("ArgentinaLuz", 5):
+                precio_descuento = precio - (precio * 0.40)
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio_descuento}")
+
+            case ("FelipeLamparas" | "JeLuz" | "HazIluminacion" | "Osram", 5):
+                precio_descuento = precio - (precio * 0.30)
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio_descuento}")
+
+            case("ArgentinaLuz" | "FelipeLamparas", 4):
+                precio_descuento = precio - (precio * 0.25)
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio_descuento}")
+
+            case("JeLuz" | "HazIluminacion" | "Osram", 4):
+                precio_descuento = precio - (precio * 0.20)
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio_descuento}")
+
+            case("ArgentinaLuz", 3):
+                precio_descuento = precio - (precio * 0.15)
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio_descuento}")
+
+            case("FelipeLamparas", 3):
+                precio_descuento = precio - (precio * 0.10)
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio_descuento}")
+
+            case("JeLuz" | "HazIluminacion" | "Osram", 3):
+                precio_descuento = precio - (precio * 0.05)
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio_descuento}")
+
+            case("ArgentinaLuz" | "FelipeLamparas" | "JeLuz" | "HazIluminacion" | "Osram", 2):
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio}")
+
+            case("ArgentinaLuz" | "FelipeLamparas" | "JeLuz" | "HazIluminacion" | "Osram", 1):
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio}")
+                
+            case _:
+                precio_descuento = precio - (precio * 0.50)
+                alert(titulo_alert, f"Usted compró {cantidad} lamparitas de {marca} por lo que su precio es de ${precio_descuento}")
+            
+            
+            
+            
+                
+            
+
+                
+
+        
         
     
 if __name__ == "__main__":
