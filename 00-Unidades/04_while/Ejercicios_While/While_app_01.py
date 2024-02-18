@@ -29,7 +29,16 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
+        contador = 0 + 1
+        suma = 0
+        titulo_alert = "Números ASCENDENTE"
+
+        while contador < 11:
+            print(contador)
+            contador = contador + 1
+            suma = suma + contador
+
+        
     
     
 if __name__ == "__main__":

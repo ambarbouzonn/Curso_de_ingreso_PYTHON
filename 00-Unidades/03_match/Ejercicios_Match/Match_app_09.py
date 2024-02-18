@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Ambar Morena
+apellido: Bouzon
 ---
 Ejercicio: Match_09
 ---
@@ -57,7 +57,72 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        destino = self.combobox_destino.get()
+        estacion = self.combobox_estaciones.get()
+        titulo_alert = "Agencia de viajes!"
+        precio_base = 15000
+
+        match (estacion, destino):
+            case ("Invierno", "Bariloche"):
+                precio_aumento = (precio_base * 0.20) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+
+            case ("Invierno", "Cataratas"):
+                precio_descuento = precio_base - (precio_base * 0.10)
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_descuento}")
+
+            case ("Invierno", "Cordoba"):
+                precio_descuento = precio_base - (precio_base * 0.10)
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_descuento}")
+
+            case ("Invierno", "Mar del plata"):
+                precio_descuento = precio_base - (precio_base * 0.20)
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_descuento}")
+
+            case ("Verano", "Bariloche"):
+                precio_descuento = precio_base - (precio_base * 0.20)
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_descuento}")
+
+            case ("Verano", "Cataratas"):
+                precio_aumento = (precio_base * 0.10) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+
+            case ("Verano", "Cordoba"):
+                precio_aumento = (precio_base * 0.10) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+
+            case ("Verano", "Mar del plata"):
+                precio_aumento = (precio_base * 0.20) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+
+            case("Primavera", "Bariloche"):
+                precio_aumento = (precio_base * 0.10) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+            case("Otoño", "Bariloche"):
+                precio_aumento = (precio_base * 0.10) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+
+            case("Primavera", "Cataratas"):
+                precio_aumento = (precio_base * 0.10) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+            case("Otoño", "Cataratas"):
+                precio_aumento = (precio_base * 0.10) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+
+            case("Primavera", "Mar del plata"):
+                precio_aumento = (precio_base * 0.10) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+            case("Otoño", "Mar del plata"):
+                precio_aumento = (precio_base * 0.10) + precio_base
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+            
+            case _:
+                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_base}")
+            
+
+
+
+
             
     
 if __name__ == "__main__":
