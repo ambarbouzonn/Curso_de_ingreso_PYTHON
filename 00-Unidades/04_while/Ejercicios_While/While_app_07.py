@@ -38,7 +38,6 @@ class App(customtkinter.CTk):
     def btn_comenzar_ingreso_on_click(self):
         pass
 
-    
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
