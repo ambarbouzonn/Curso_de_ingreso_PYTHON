@@ -29,8 +29,8 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
-    
+        numeros_pares = int(2, 4, 6, 8, 10)
+        
     
 if __name__ == "__main__":
     app = App()

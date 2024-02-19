@@ -30,13 +30,12 @@ class App(customtkinter.CTk):
     
     def btn_mostrar_iteracion_on_click(self):
         contador = 0 + 1
-        suma = 0
         titulo_alert = "Números ASCENDENTE"
 
         while contador < 11:
-            print(contador)
+            alert(titulo_alert, contador)
             contador = contador + 1
-            suma = suma + contador
+            
 
         
     
