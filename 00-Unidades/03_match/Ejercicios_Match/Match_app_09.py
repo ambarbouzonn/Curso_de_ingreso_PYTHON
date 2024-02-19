@@ -64,61 +64,37 @@ class App(customtkinter.CTk):
 
         match (estacion, destino):
             case ("Invierno", "Bariloche"):
-                precio_aumento = (precio_base * 0.20) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+                precio_final = (precio_base * 0.20) + precio_base
+                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
-            case ("Invierno", "Cataratas"):
-                precio_descuento = precio_base - (precio_base * 0.10)
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_descuento}")
-
-            case ("Invierno", "Cordoba"):
-                precio_descuento = precio_base - (precio_base * 0.10)
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_descuento}")
+            case ("Invierno", "Cataratas" | "Cordoba"):
+                precio_final = precio_base - (precio_base * 0.10)
+                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}"
 
             case ("Invierno", "Mar del plata"):
-                precio_descuento = precio_base - (precio_base * 0.20)
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_descuento}")
+                precio_final = precio_base - (precio_base * 0.20)
+                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
             case ("Verano", "Bariloche"):
-                precio_descuento = precio_base - (precio_base * 0.20)
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_descuento}")
+                precio_final = precio_base - (precio_base * 0.20)
+                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
-            case ("Verano", "Cataratas"):
-                precio_aumento = (precio_base * 0.10) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
-
-            case ("Verano", "Cordoba"):
-                precio_aumento = (precio_base * 0.10) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+            case ("Verano", "Cataratas" | "Cordoba"):
+                precio_final = (precio_base * 0.10) + precio_base
+                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
 
             case ("Verano", "Mar del plata"):
-                precio_aumento = (precio_base * 0.20) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+                precio_final = (precio_base * 0.20) + precio_base
+                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
-            case("Primavera", "Bariloche"):
-                precio_aumento = (precio_base * 0.10) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
-            case("Otoño", "Bariloche"):
-                precio_aumento = (precio_base * 0.10) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
-
-            case("Primavera", "Cataratas"):
-                precio_aumento = (precio_base * 0.10) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
-            case("Otoño", "Cataratas"):
-                precio_aumento = (precio_base * 0.10) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
-
-            case("Primavera", "Mar del plata"):
-                precio_aumento = (precio_base * 0.10) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
-            case("Otoño", "Mar del plata"):
-                precio_aumento = (precio_base * 0.10) + precio_base
-                alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
+            case("Primavera" | "Otoño", "Bariloche" | "Cataratas" | "Mar del plata"):
+                precio_final = (precio_base * 0.10) + precio_base
+                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
             
             case _:
                 alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_base}")
-            
+        
+        alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
 
 
