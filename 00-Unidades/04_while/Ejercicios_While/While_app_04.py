@@ -30,7 +30,6 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_numero_on_click(self):
-
         while True:
             numero_ingresado = int(prompt("Numero!", "Ingrese un numero al azar"))
             if 0 <= numero_ingresado <= 9:
