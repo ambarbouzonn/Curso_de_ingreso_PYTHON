@@ -65,31 +65,24 @@ class App(customtkinter.CTk):
         match (estacion, destino):
             case ("Invierno", "Bariloche"):
                 precio_final = (precio_base * 0.20) + precio_base
-                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
             case ("Invierno", "Cataratas" | "Cordoba"):
                 precio_final = precio_base - (precio_base * 0.10)
-                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}"
 
             case ("Invierno", "Mar del plata"):
                 precio_final = precio_base - (precio_base * 0.20)
-                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
             case ("Verano", "Bariloche"):
                 precio_final = precio_base - (precio_base * 0.20)
-                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
             case ("Verano", "Cataratas" | "Cordoba"):
                 precio_final = (precio_base * 0.10) + precio_base
-                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_aumento}")
 
             case ("Verano", "Mar del plata"):
                 precio_final = (precio_base * 0.20) + precio_base
-                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
 
             case("Primavera" | "Otoño", "Bariloche" | "Cataratas" | "Mar del plata"):
                 precio_final = (precio_base * 0.10) + precio_base
-                #alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_final}")
             
             case _:
                 alert(titulo_alert, f"El precio final de su viaje a {destino} en {estacion} es de ${precio_base}")

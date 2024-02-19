@@ -34,7 +34,7 @@ class App(customtkinter.CTk):
 
         while contador >= 1:
             alert(titulo_alert, contador)
-            contador = contador - 1
+            contador -= 1
             
 
     

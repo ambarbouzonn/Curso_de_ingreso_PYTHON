@@ -29,18 +29,7 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        suma = 0
-        numero = 1
-        titulo_alert = "Suma pares"
-
-        while numero <= 10:
-            if numero % 2 == 0:
-                suma += numero
-            numero += 1
-            alert(titulo_alert, f"La suma de los pares entre 1 y 10 es {suma}")
-
-
-        
+        pass
     
 if __name__ == "__main__":
     app = App()

@@ -46,7 +46,7 @@ class App(customtkinter.CTk):
                 alert(titulo_alert, "Si tiene 31 dias.")
             case "Enero"|"Abril"|"Junio"|"Septiembre"|"Noviembre":
                 alert(titulo_alert, "Si tiene 30 dias.")
-            case "Febrero":
+            case _:
                 alert(titulo_alert, "Si tiene 29 dias.")
             
     
