@@ -30,7 +30,15 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_numero_on_click(self):
-        pass
+
+        while True:
+            numero_ingresado = int(prompt("Numero!", "Ingrese un numero al azar"))
+            if 0 <= numero_ingresado <= 9:
+                alert("Numero", "El numero coicide")
+                break
+            else:
+                alert("Numero", "El numero no coincide. Por favor, ingrese otra numero")
+                continue
     
 if __name__ == "__main__":
     app = App()
