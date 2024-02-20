@@ -40,7 +40,32 @@ class App(customtkinter.CTk):
                               columnspan=2, sticky="nsew")
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        maximo = float('-inf')
+        minimo = float('inf')
+
+        while True:
+            ingrese_numeros = prompt("", "Por favor, ingrese los numeros que desee:")
+
+            if ingrese_numeros is None:
+                break
+
+            ingrese_numeros = float(ingrese_numeros)
+
+            if ingrese_numeros > maximo:
+                maximo = ingrese_numeros
+            
+            if ingrese_numeros < minimo:
+                minimo = ingrese_numeros
+
+        self.txt_maximo.delete(0, tkinter.END)
+        self.txt_maximo.insert(tkinter.END, maximo)
+
+        self.txt_minimo.delete(0, tkinter.END)
+        self.txt_minimo.insert(tkinter.END, minimo)
+
+
+
+
 
 
 if __name__ == "__main__":
