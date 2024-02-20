@@ -40,11 +40,14 @@ class App(customtkinter.CTk):
 
         while contador < 5:
             contador += 1
-            ingreso_numero = int(prompt("Numeros!", "Ingrese 5 numeros, por favor:"))
+            ingreso_numero = prompt("Numeros!", "Ingrese 5 numeros, por favor:")
+            ingreso_numero = int(ingreso_numero)
             suma += ingreso_numero
             promedio = suma / 5
         
+        self.txt_suma_acumulada.delete(0, tkinter.END)
         self.txt_suma_acumulada.insert(0, suma)
+        self.txt_promedio.delete(0, tkinter.END)
         self.txt_promedio.insert(0, promedio)
 
 

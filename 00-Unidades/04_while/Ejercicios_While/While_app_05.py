@@ -30,15 +30,18 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_letra_on_click(self):
+        titulo_alert = " Validdacion Letras"
+        mensaje_1 = "La letra coincide!"
+        mensaje_2 = "La letra no coincide, por favor ingrese otra."
         
         while True:
             letra_ingresada = prompt("Letras", "Por favor, ingrese una letra")
             letra_ingresada_mayuscula = letra_ingresada.upper()
             if letra_ingresada_mayuscula == "U" or letra_ingresada_mayuscula == "T" or letra_ingresada_mayuscula == "N":
-                alert("Letras", "La letra coincide!")
+                alert(titulo_alert, mensaje_1)
                 break
             else:
-                alert("Letras", "La letra no coincide, por favor ingrese otra.")
+                alert(titulo_alert, mensaje_2)
                 continue
 
             
