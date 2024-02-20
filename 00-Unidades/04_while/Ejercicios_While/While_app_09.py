@@ -44,7 +44,7 @@ class App(customtkinter.CTk):
         minimo = float('inf')
 
         while True:
-            ingrese_numeros = prompt("", "Por favor, ingrese los numeros que desee:")
+            ingrese_numeros = prompt("Maximo y minimo", "Por favor, ingrese los numeros que desee:")
 
             if ingrese_numeros is None:
                 break
