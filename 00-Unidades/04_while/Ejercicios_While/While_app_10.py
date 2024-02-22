@@ -61,8 +61,7 @@ class App(customtkinter.CTk):
                     contador_neg += 1
                     resultado_neg += numero_ingresado
                 else:
-                    if numero_ingresado == 0: #Ceros
-                        contador_de_0 += 1
+                    contador_de_0 += 1
                     
         diferencia = resultado_pos + resultado_neg
                     

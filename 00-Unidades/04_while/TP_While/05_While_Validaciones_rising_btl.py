@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Ambar Morena
+apellido: Bouzon
 ---
 TP: While_validaciones_rising_btl
 ---
@@ -58,48 +58,55 @@ class App(customtkinter.CTk):
 
     def btn_validar_on_click(self):
         titulo_alert = "Validacion de datos"
-        contador = 0
+
         
         # Solicitar apellido
         while True:
             apellido = prompt(titulo_alert, "Por favor, ingrese su apellido")
-            apellido = apellido.capitalize()
 
-            if apellido is None:
-                alert("Error", "Por favor, ingrese un apellido")
-                continue
+            if apellido is None and apellido == "":
+                break
             else:
                 break
 
         # Solicitar edad
         while True:
             edad = prompt(titulo_alert, "Por favor, ingrese su edad")
+            
+            if edad is None or edad == "":
+                break
 
             edad = int(edad)
-            if edad is None:
-                break
-            if edad < 18 or edad > 90:
+            if edad < 17 or edad > 91:
                 alert("Error", "Por favor, ingrese una edad valida")
                 continue
             else:
                 break
 
+
         # Solicitar numero de legajo
         while True:
             numero_legajo = prompt(titulo_alert, "Por favor, ingrese su numero de legajo de 4 cifras")
-            numero_legajo = int(numero_legajo)
 
+            if numero_legajo is None or "":
+                break
+
+            numero_legajo = int(numero_legajo)
             if numero_legajo > 9999 or numero_legajo < 1000:
                 alert("Error", "Por favor, ingrese un numero de 4 cifras valido")
                 continue
             else:
                 break
 
+
+        # Solicitar estado civil
         while True:
             estado_civil = prompt(titulo_alert, "Por favor, ingrese su estado civil\n"
                                   "Ingrese: Soltero/a, Casado/a, Divorciado/a, Viudo/a")
-            if estado_civil is None:
+            
+            if estado_civil is None or "":
                 break
+
             if estado_civil not in ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]:
                 alert("Error", "Por favor, ingrese un estado civil válido")
                 continue
@@ -108,7 +115,7 @@ class App(customtkinter.CTk):
 
         
         self.txt_edad.insert(0, edad)
-        self.txt_apellido.insert(0, apellido)
+        self.txt_apellido.insert(0, apellido.capitalize())
         self.txt_legajo.insert(0, numero_legajo)
         self.combobox_tipo.set(estado_civil)
 

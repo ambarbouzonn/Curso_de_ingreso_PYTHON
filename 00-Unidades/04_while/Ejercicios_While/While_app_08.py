@@ -56,6 +56,7 @@ class App(customtkinter.CTk):
                     contador += 1
                     
                     producto *= ingrese_numeros
+                
             
             
         self.txt_producto.delete(0, tkinter.END)
