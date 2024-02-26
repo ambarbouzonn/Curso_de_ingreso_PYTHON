@@ -29,10 +29,16 @@ class App(customtkinter.CTk):
     def btn_mostrar_on_click(self):
         numero = prompt("", "Ingrese un numero.")
         numero = int(numero)
+        contador_divisor = 0
         
-        divisores = [i for i in range(1, numero + 1) if numero % i == 0]
+        for contador in range(1, numero + 1):
 
-        alert("", f"La cantidad de divisores encontrados fueron: {divisores}")
+            if numero % contador == 0:
+                print(contador)
+                contador_divisor += 1
+
+        print(contador_divisor)
+
         
     
 if __name__ == "__main__":

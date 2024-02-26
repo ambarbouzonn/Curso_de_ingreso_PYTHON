@@ -31,11 +31,12 @@ class App(customtkinter.CTk):
         cantidad = int(cantidad)
         contador = 0
 
-        for numeros in range(2, cantidad, 2):
+        for numeros in range(2, cantidad + 1, 2):
             contador += 1
-            alert("Numeros pares", numeros)
+            print(numeros)
             
-        alert("Cantidad de numeros pares", f"Se encontradron {contador} numeros pares")
+            
+        alert("Cantidad de numeros pares", f"Se encontraron {contador} numeros pares")
             
         
     
