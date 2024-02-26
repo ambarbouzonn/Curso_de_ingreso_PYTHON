@@ -11,7 +11,8 @@ apellido:
 Ejercicio: for_03
 ---
 Enunciado:
-Al presionar el botón 'Mostrar' tomar el valor de la caja de texto (txt_repetir) y mostrar el mensaje "Hola UTN FRA" la cantidad de veces que el usuario ingreso (utilizando el Dialog Alert)
+Al presionar el botón 'Mostrar' tomar el valor de la caja de texto (txt_repetir) y mostrar el mensaje "Hola UTN FRA" 
+la cantidad de veces que el usuario ingreso (utilizando el Dialog Alert)
 '''
 
 class App(customtkinter.CTk):
@@ -32,7 +33,11 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        cantidad = int(self.txt_repetir.get())
+        mensaje = "Hola UTN FRA"
+
+        for _ in range(cantidad):
+            alert("", mensaje)
 
         
     

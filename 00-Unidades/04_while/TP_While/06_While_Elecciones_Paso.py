@@ -35,7 +35,34 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        titulo = "Candidatos"
+        bandera = True
+        bandera_primer_ingreso = False
+        contador_candidatos = 0
+        acumulador_edades = 0
+        acumulador_votos = 0
+
+        while True:
+            nombre = prompt(titulo, "Nombre del candidato:")
+
+            if nombre == None:
+                break
+            else:
+                if nombre == "":
+                    alert("Error", "Debe ingresar un nombre.")
+                    continue
+                else:
+                    contador_candidatos += 1
+                    break
+            
+            
+
+        print(nombre)
+
+
+
+
+
 
 
 if __name__ == "__main__":

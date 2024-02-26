@@ -36,7 +36,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        intento = int(self.txt_numero.get())
+        self.numero_intento += 1
+
+        if intento == self.numero_secreto:
+            alert("Felicidades!", f"Ganaste en {self.numero_intento} intentos")
+        elif intento < self.numero_secreto:
+            alert("Casi!", "Falta... para llegar al número secreto")
+        else:
+            alert("Casi!", "Se pasó... del número secreto")
+
 
 
 if __name__ == "__main__":
