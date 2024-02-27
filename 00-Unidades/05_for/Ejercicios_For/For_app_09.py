@@ -45,13 +45,13 @@ class App(customtkinter.CTk):
         numero_secreto = random.randint(1, 100)
         intentos = 0
         
-        for contador in range(1, 8):
+        for contador in range(1, 7):
             while contador < 7:
                 numero_ingresado = prompt("Juego!", "Ingrese un numero:")
                 numero_ingresado = int(numero_ingresado)
                 if numero_ingresado != numero_secreto:
                     intentos += 1
-                    if numero_ingresado < numero_secreto:
+                    if numero_ingresado < numero_secreto: 
                         alert("", "Falta para el numero secreto...")
                     else:
                         alert("", "Se paso del numero secreto.")
