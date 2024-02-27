@@ -1,67 +1,8 @@
-import tkinter
-from tkinter.messagebox import showinfo as alert
-from tkinter.messagebox import askyesno as question
-from tkinter.simpledialog import askstring as prompt
-import customtkinter
+# Si tiene cantiadad con un for (ej: for contador in range(cantiadad pedida))
+# Si no se sabe cuantos datos se van a ingresar (while True:)
 
-'''
-nombre:
-apellido:
----
-Un gimnasio quiere medir el progreso de sus clientes, para ello se debe ingresar:
 
-Nombre
-
-Edad (debe ser mayor a 12)
-
-Altura (no debe ser negativa)
-
-Días que asiste a la semana (1, 3, 5)
-
-Kilos que levanta en peso muerto (no debe ser cero, ni negativo)
-
- 
-
-No sabemos cuántos clientes serán consultados.
-
-Se debe informar al usuario:
-
-El promedio de kilos que levantan las personas que asisten solo 3 días a la semana.
-
-El porcentaje de clientes que asiste solo 1 día a la semana.
-
-Nombre y edad del cliente con más altura.
-
-Determinar si los clientes eligen más ir 1, 3 o 5 días
-
-Nombre y cantidad de kilos levantados en peso muerto, de la persona más joven que solo asista 5 días a la semana.
-
-'''
-
-class App(customtkinter.CTk):
-
-    def __init__(self):
-        super().__init__()
-
-        self.title("UTN Fra")
-
-        self.btn_validar = customtkinter.CTkButton(
-            master=self, text="Validar", command=self.btn_validar_on_click)
-        self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
-
-    def btn_validar_on_click(self):
-        seguir = True
-        contador_dias_1_semana = 0
-        contador_dias_3_semana = 0
-        contador_dias_5_semana = 0
-        acumulador_kilos_dias_3 = 0
-        bandera_altura = True
-        max_joven_5_dias = 150  
-        nombre_max_joven_5_dias = ""
-        kilos_max_joven_5_dias = 0
-
-        while seguir:
-
+"""
             # Pedir nombre
             nombre = prompt("Datos", "Ingrese su nombre")
 
@@ -149,16 +90,26 @@ class App(customtkinter.CTk):
             porcentaje_dia_1 = (contador_dias_1_semana * 100) / total_clientes
         else:
             porcentaje_dia_1 = 0
-             
-
-        alert("Resultados", f"Promedio de kilos para personas que asisten solo 3 días a la semana: {promedio_kilos_3_dias}")
-        alert("Resultados", f"Porcentaje de clientes que asisten solo 1 día a la semana: %{porcentaje_dia_1}")
-        alert("Resultados", f"Cliente con más altura: Nombre: {nombre_max_altura}, Edad: {edad_max_altura}, Altura: {max_altura} cm")
-        alert("Resultados", f"Número de clientes que asisten a la semana: 1 día: {contador_dias_1_semana}, 3 días: {contador_dias_3_semana}, 5 días: {contador_dias_5_semana}")
-        alert("Resultados", f"Persona más joven que asiste 5 días a la semana: Nombre: {nombre_max_joven_5_dias}, Kilos levantados en peso muerto: {kilos_max_joven_5_dias}")
 
 
-if __name__ == "__main__":
-    app = App()
-    app.geometry("300x300")
-    app.mainloop()
+            # Validar un string
+            clave_ingresada = prompt("", "Ingrese la clave:")
+            if clave_ingresada == clave:
+                alert("Clave!", "La clave ingresada es correcta.")
+                break
+            else:
+                alert("Incorrecto", "La contraseña ingresada es incorrecta. Por favor, inténtelo nuevamente.")
+                continue
+
+
+            # Validar letras
+            letra_ingresada = prompt("Letras", "Por favor, ingrese una letra")
+            letra_ingresada_mayuscula = letra_ingresada.upper()
+            if letra_ingresada_mayuscula == "U" or letra_ingresada_mayuscula == "T" or letra_ingresada_mayuscula == "N":
+                alert(titulo_alert, mensaje_1)
+                break
+            else:
+                alert(titulo_alert, mensaje_2)
+                continue
+
+"""
