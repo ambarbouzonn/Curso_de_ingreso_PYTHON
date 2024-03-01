@@ -2,7 +2,6 @@
 # Si no se sabe cuantos datos se van a ingresar (while True:)
 
 
-"""
             # Pedir nombre
             nombre = prompt("Datos", "Ingrese su nombre")
 
@@ -112,4 +111,3 @@
                 alert(titulo_alert, mensaje_2)
                 continue
 
-"""
